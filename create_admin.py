@@ -1,4 +1,10 @@
 import os
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+
+import django
+django.setup()
+
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -15,3 +21,7 @@ if username and password:
             password=password,
         )
         print("Superuser created")
+    else:
+        print("Superuser already exists")
+else:
+    print("Missing ADMIN_USERNAME or ADMIN_PASSWORD")
