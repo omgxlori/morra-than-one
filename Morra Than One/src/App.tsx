@@ -216,7 +216,7 @@ function App() {
           <div className="vote-container">
             {!hasVoted ? (
               <>
-              <h3>GENDER REVEAL VOTES 👶🤍👶</h3>
+              <h3>GENDER REVEAL VOTES<br></br>👶🤍👶</h3>
                 <input
                   value={name}
                   onChange={(event) => {
