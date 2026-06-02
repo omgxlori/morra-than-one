@@ -33,7 +33,7 @@ function App() {
 
   useEffect(() => {
     const fetchResults = async () => {
-      const response = await fetch("http://127.0.0.1:8000/api/poll/");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/poll/`)
       const data = await response.json();
 
       setResults(data.results);
@@ -93,7 +93,7 @@ function App() {
       return;
     }
 
-    const response = await fetch("http://127.0.0.1:8000/api/poll/", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/poll/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -111,7 +111,7 @@ function App() {
     setName("");
     setNameError("");
 
-    const resultsResponse = await fetch("http://127.0.0.1:8000/api/poll/");
+    const resultsResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/poll/`);
     const resultsData = await resultsResponse.json();
 
     setResults(resultsData.results);
