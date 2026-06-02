@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Morra Than One</title>
+</head>
+
+<body>
+  <h1>Morra Than One</h1>
+
+  <h2>What’s your twin prediction?</h2>
+
+  {% if not has_voted %}
+
+    <form method="POST">
+      {% csrf_token %}
+
+      <input type="text" name="name" placeholder="Your name" required>
+
+      <button type="submit" name="choice" value="BB">
+        🩵🩵 Boy / Boy
+      </button>
+
+      <button type="submit" name="choice" value="GG">
+        🩷🩷 Girl / Girl
+      </button>
+
+      <button type="submit" name="choice" value="BG">
+        🩵🩷 Boy / Girl
+      </button>
+    </form>
+
+  {% else %}
+
+    <p>Thanks for voting 🤍</p>
+
+  {% endif %}
+
+  <h3>Current Results</h3>
+
+  {% for result in results %}
+    <p>
+      {{ result.label }} — {{ result.percentage }}%
+      ({{ result.count }} votes)
+    </p>
+  {% endfor %}
+
+  <p>Total votes: {{ total_votes }}</p>
+
+</body>
+</html>

@@ -1,0 +1,460 @@
+body {
+  min-height: 100vh;
+  background-image: url("./assets/images/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  font-family: "Poppins", sans-serif;
+  color: #14304a;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5.5rem;
+  margin: 45px 0 0;
+  font-family: "Allura", cursive;
+  font-weight: 400;
+  color: #12314f;
+}
+
+h1::after {
+  content: "GENDER REVEAL";
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 14px;
+  margin-top: 14px;
+  color: #c5a24d;
+  font-weight: 600;
+}
+
+h2 {
+  letter-spacing: 2px;
+  color: #132f4c;
+}
+
+p {
+  margin: 0;
+}
+
+nav {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+
+  margin: 20px auto 30px;
+  padding-bottom: 20px;
+
+  border-bottom: 2px solid black;
+}
+
+nav button {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 999px;
+  border: none;
+
+  background: linear-gradient(90deg, #74c5ff, #f56fa8);
+  color: white;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(120, 100, 140, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+nav button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(120, 100, 140, 0.25);
+}
+
+nav button.active {
+  background: linear-gradient(90deg, #f56fa8, #74c5ff);
+}
+
+.countdown-container {
+  text-align: center;
+  background: transparent;
+  box-shadow: none;
+  padding: 10px 20px;
+  margin: 20px auto;
+}
+
+.countdown-container h3,
+.reveal-video-card h3,
+.vote-container h3 {
+  letter-spacing: 2px;
+  color: #132f4c;
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.countdown-card {
+  width: 120px;
+  height: 105px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 8px 22px rgba(50, 70, 90, 0.13);
+}
+
+.countdown-card span {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.countdown-card p {
+  margin-top: 8px;
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+
+.countdown-card:nth-child(1) span,
+.countdown-card:nth-child(2) span {
+  color: #55aef7;
+}
+
+.countdown-card:nth-child(3) span,
+.countdown-card:nth-child(4) span {
+  color: #f56fa8;
+}
+
+.intro-card,
+.vote-container,
+.reveal-video-card {
+  max-width: 820px;
+  margin: 24px auto;
+  padding: 30px;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 28px;
+  box-shadow: 0 12px 35px rgba(80, 70, 90, 0.14);
+  backdrop-filter: blur(10px);
+}
+
+.intro-card {
+  line-height: 1.8;
+}
+
+.intro-card p {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.reveal-video-card iframe {
+  width: 100%;
+  height: 420px;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.youtube-button,
+.rsvp-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 14px 42px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #74c5ff, #f56fa8);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 18px rgba(120, 100, 140, 0.18);
+}
+
+.vote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.vote-container input {
+  width: 420px;
+  max-width: 90vw;
+  padding: 14px 18px;
+
+  border-radius: 10px;
+  border: 2px solid #e5e7ec;
+
+  background: white;
+  color: #14304a;
+
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+}
+
+.vote-container input::placeholder {
+  color: #14304a;
+}
+
+.vote-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  line-height: 0;
+  display: block;
+}
+
+.vote-button img {
+  display: block;
+  width: 400px;
+  max-width: 90vw;
+  border-radius: 20px;
+  transition: transform 0.2s ease;
+}
+
+.vote-button img:hover {
+  transform: scale(1.03);
+}
+
+.countdown-container {
+  margin-top: 32px;
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.countdown-card {
+  width: 95px;
+  padding: 16px 10px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #dbeafe, #fce7f3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.countdown-card span {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  color: #374151;
+  line-height: 1;
+}
+
+.countdown-card p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #6b6375;
+}
+
+.input-error {
+  border: 1px solid #ff8fb1 !important;
+}
+
+.error-message {
+  color: #ff8fb1;
+  font-size: 14px;
+  margin-top: -8px;
+}
+
+.intro-card {
+  max-width: 950px;
+  margin: 30px auto;
+  padding: 32px;
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(255, 192, 203, 0.08);
+
+  line-height: 1.8;
+}
+
+.intro-card p {
+  margin-bottom: 16px;
+}
+
+.block-stack {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 14px;
+}
+
+.toy-block {
+  width: 64px;
+  height: 64px;
+  margin-top: -4px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 6px;
+  background: #fff7e8;
+  border: 5px solid #f9a8d4;
+
+  color: #9a6b4f;
+  font-weight: 900;
+  font-size: 27px;
+  font-family: 'Fredoka', sans-serif;
+  letter-spacing: 0.5px;
+
+  box-shadow:
+  inset 0 0 0 4px #9a6b4f,
+  inset 3px 3px 0 rgba(255, 255, 255, 0.75),
+  inset -3px -3px 0 rgba(0, 0, 0, 0.08),
+  0 8px 14px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  animation: stackRipple 0.45s ease forwards;
+}
+
+.toy-block::before,
+.toy-block::after {
+  display: none;
+}
+
+.turned-left {
+  transform: rotate(-5deg);
+}
+
+.turned-right {
+  transform: rotate(5deg);
+}
+
+.toy-block span {
+  position: relative;
+  z-index: 2;
+}
+
+.bb-block {
+  border-color: #93c5fd;
+}
+
+.gg-block {
+  border-color: #f9a8d4;
+}
+
+.bg-block {
+  border-color: #c4b5fd;
+}
+
+@keyframes stackRipple {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.8);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.06);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.block-results-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 60px;
+  margin-top: 30px;
+}
+
+.reveal-video-card {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 20px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.reveal-video {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 16px;
+}
+
+.video-play-button {
+  margin-top: 16px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #93c5fd, #f9a8d4);
+  color: white;
+}
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 3.2rem;
+    margin-top: 35px;
+  }
+
+  h1::after {
+    font-size: 1rem;
+    letter-spacing: 8px;
+  }
+
+  .countdown-card {
+    width: 135px;
+  }
+
+  .intro-card,
+  .vote-container,
+  .reveal-video-card {
+    margin: 16px;
+    padding: 22px;
+  }
+
+  .reveal-video-card iframe {
+    height: 230px;
+  }
+
+  .vote-button {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
